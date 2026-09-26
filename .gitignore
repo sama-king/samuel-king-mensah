@@ -1,0 +1,25 @@
+.DS_Store
+node_modules/
+
+# Local credentials and configuration
+.env
+.env.*
+kie-api.txt
+*credentials*.json
+*.pem
+*.p12
+
+# Rebuilt distribution files
+site/
+samuel-king-mensah-portfolio.zip
+package-manifest.json
+
+# Research, captures, and private CV renders
+lab/cv/
+lab/gen/
+lab/**/*.png
+lab/**/*.jpg
+lab/**/*.jpeg
+lab/**/*.webp
+lab/**/*.log
+lab/**/*.json

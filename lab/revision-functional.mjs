@@ -1,0 +1,35 @@
+import {chromium} from 'playwright-core';
+import fs from 'node:fs/promises';
+const b=await chromium.launch({executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',headless:true});
+const base=process.env.PORTFOLIO_URL||'http://127.0.0.1:4500/';const results=[];
+function assert(condition,msg){if(!condition)throw new Error(msg);results.push(msg)}
+async function context(options={}){const c=await b.newContext({viewport:{width:1440,height:900},...options});await c.addInitScript(()=>{Element.prototype.requestPointerLock=()=>Promise.reject();Element.prototype.setPointerCapture=()=>{};Element.prototype.releasePointerCapture=()=>{};Document.prototype.exitPointerLock=()=>{}});return c;}
+const c=await context();const p=await c.newPage();const errs=[];p.on('pageerror',e=>errs.push(e.message));await p.goto(base,{waitUntil:'networkidle'});
+await p.locator('[data-jump=lumos]').click();await p.waitForTimeout(1300);
+assert(await p.locator('[data-jump=lumos]').getAttribute('aria-current')==='true','Clicking project links scrolls to the chosen project');
+await p.locator('[data-jump=lumos]').focus();await p.keyboard.press('ArrowRight');await p.waitForTimeout(1300);
+assert(await p.locator('[data-jump=employed]').getAttribute('aria-current')==='true','Arrow keys move between projects');
+await p.locator('a.project-notes[href="projects/employed.html"]').click();await p.waitForURL(/projects\/employed\.html/);assert(await p.locator('#pp-title').textContent()==='employed','Project link opens the employed page');
+assert((await p.locator('.pp-contact').getAttribute('href')).includes('employed'),'Project page inquiry carries project context');await p.locator('.pp-arch').scrollIntoViewIfNeeded();await p.waitForTimeout(600);assert(await p.locator('.arch-node').count()>=8,'Every architecture component is rendered');assert(await p.locator('.arch-wires .wire').count()===await p.locator('.arch-connections [data-edge]').count(),'Every connection is drawn as a wire');await p.locator('.arch-node[data-node=agent]').hover();assert(await p.locator('.arch-diagram').evaluate(e=>e.classList.contains('has-focus')),'Hovering a component traces its connections');
+await p.goBack();await p.waitForURL(u=>!/projects/.test(u.toString()));await p.waitForTimeout(1000);
+await p.locator('#next-project').click();await p.waitForTimeout(1300);assert(await p.locator('[data-jump=frontdesk]').getAttribute('aria-current')==='true','Next control reaches FrontDesk');
+assert(await p.locator('#next-project').isDisabled(),'Last project disables next control');
+await p.locator('[data-jump=frontdesk]').focus();await p.keyboard.press('Home');await p.waitForTimeout(1300);assert(await p.locator('[data-jump=security]').getAttribute('aria-current')==='true','Home reaches first project');
+assert(await p.locator('#previous-project').isDisabled(),'First project disables previous control');
+await p.locator('#work').scrollIntoViewIfNeeded();await p.locator('[data-jump=security]').click();await p.waitForTimeout(900);
+const win=await p.locator('.project-window').boundingBox();await p.mouse.move(win.x+win.width/2,win.y+win.height/2);
+await p.mouse.wheel(700,0);await p.waitForTimeout(900);assert(await p.locator('.project-window').evaluate(e=>e.scrollLeft>0),'Sideways scroll moves the gallery');
+const y0=await p.evaluate(()=>scrollY);await p.mouse.wheel(0,400);await p.waitForTimeout(400);assert(await p.evaluate(()=>scrollY)>y0,'Vertical scroll passes over the gallery');
+await p.locator('#work').scrollIntoViewIfNeeded();await p.waitForTimeout(300);
+await p.screenshot({path:'lab/revision/desktop-between-projects.png'});
+await p.locator('.collection-skip').click();await p.waitForTimeout(1400);assert(await p.locator('#languages').evaluate(e=>Math.abs(e.getBoundingClientRect().top)<100),'Skills link exits the gallery');
+assert(await p.locator('.language').count()===10,'Seven languages and three framework/runtime indicators exist');
+await p.locator('#inquiry-project').selectOption('frontdesk');assert((await p.locator('#project-inquiry').getAttribute('href')).includes('FrontDesk'),'Contact selector updates email subject');
+await p.emulateMedia({reducedMotion:'reduce'});await p.waitForTimeout(100);assert(await p.locator('.project-slide[inert]').count()===0,'Changing to reduced motion exposes all five projects');
+assert(await p.locator('.project-rail').evaluate(e=>getComputedStyle(e).transform)==='none','Reduced motion removes the rail transform');
+assert(await p.locator('.language').evaluateAll(rows=>rows.every(row=>[...row.querySelectorAll('.language-meter>span')].filter(span=>getComputedStyle(span,'::after').transform.startsWith('matrix(1,')).length===Number(row.dataset.level))),'Reduced-motion proficiency bars retain the correct number of filled segments');
+await p.emulateMedia({reducedMotion:'no-preference'});await p.setViewportSize({width:844,height:390});await p.waitForTimeout(150);assert(!await p.locator('html').evaluate(e=>e.classList.contains('portfolio-motion')),'Short landscape screens use the complete vertical layout');
+assert(errs.length===0,'No JavaScript runtime errors');await c.close();
+const nojs=await context({javaScriptEnabled:false});const np=await nojs.newPage();await np.goto(base);assert(await np.locator('.project-slide').count()===5,'No-JavaScript HTML contains all five projects');assert(await np.locator('#work').evaluate(e=>e.offsetHeight>2500),'No-JavaScript layout exposes projects vertically');await nojs.close();
+const phone=await context({viewport:{width:390,height:844},hasTouch:true,isMobile:true});const pp=await phone.newPage();await pp.goto(base);await pp.locator('[data-jump=frontdesk]').tap();await pp.waitForTimeout(1300);assert(await pp.locator('[data-jump=frontdesk]').getAttribute('aria-current')==='true','Touch navigation reaches the last project');await pp.locator('a.project-notes[href="projects/frontdesk.html"]').tap();await pp.waitForURL(/projects\/frontdesk/);assert(await pp.locator('.arch-diagram').count()===1,'Touch opens the project page');await phone.close();
+await fs.writeFile('lab/revision/functional.json',JSON.stringify(results,null,2));console.log(results);await b.close();

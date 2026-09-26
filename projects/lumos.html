@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" class="pp pp-lumos">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LumosCast · Samuel King-Mensah</title>
+  <meta name="description" content="A presentation system that listens to a live sermon, detects spoken Bible references, retrieves the passage from a local database, and puts it on the projector or OBS.">
+  <meta name="theme-color" content="#0b0d1f">
+  <link rel="icon" href="../assets/favicon.png">
+  <link rel="stylesheet" href="../scrollcraft.css">
+  <link rel="stylesheet" href="project.css">
+  <style>:root{--sc-canvas:#0b0d1f;--sc-surface:#151939;--sc-ink:#eef0ff;--sc-ink-soft:#9ea4cf;--sc-accent:#f3b95f;--sc-accent-ink:#0b0d1f;--pp-deep:#070817;--pp-line:#2b3160;--pp-alt:#adc6ff}</style>
+  <script>document.documentElement.classList.add('js')</script>
+  <noscript><style>[data-sc-in],[data-sc-stagger]>*,[data-sc-cue]{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+  <span data-sc-progress></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="pp-bar">
+    <a class="pp-back" href="../index.html#project-lumos" data-back><span aria-hidden="true">←</span> Selected systems</a>
+    <a class="pp-mark" href="../index.html" aria-label="Samuel King-Mensah, home"><img src="../assets/skm-logo.png" alt="" width="200" height="50"></a>
+    <a class="pp-contact" href="mailto:skingmensah@gmail.com?subject=Enquiry%20about%20LumosCast">Get in touch <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="main">
+    <section class="pp-hero" data-sc-act="flow" data-sc-spotlight aria-labelledby="pp-title">
+      <div class="pp-hero-grid" aria-hidden="true" data-sc-parallax="-0.8"></div>
+      <div class="pp-hero-copy">
+        <p class="pp-kicker">Speech &amp; presentation · Desktop <span>·</span> Offline-first</p>
+        <h1 id="pp-title" style="view-transition-name:pt-lumos">LumosCast</h1>
+        <p class="pp-headline">Spoken references.<br>Ready for the screen.</p>
+        <p class="pp-lede">A presentation system that listens to a live sermon, detects spoken Bible references, retrieves the passage from a local database, and puts it on the projector or OBS.</p>
+        <dl class="pp-facts"><div><dt>Role</dt><dd>Architecture and full build</dd></div><div><dt>Platform</dt><dd>macOS, Windows and Linux</dd></div><div><dt>Network</dt><dd>Runs with no internet</dd></div></dl>
+      </div>
+      <figure class="project-visual visual-lumos pp-hero-visual" style="view-transition-name:pv-lumos" data-sc-tilt="4"><div class="screen-halo" aria-hidden="true"></div><img class="app-screen" src="../assets/projects/lumos-console.webp" alt="LumosPresenter console design showing scripture search, passage preview, and live presentation queue" width="1800" height="1355"><figcaption><span>LumosCast / LumosPresenter</span><span>Console design</span></figcaption></figure>
+    </section>
+
+    <section class="pp-features sc-section" data-sc-act="flow" aria-labelledby="pp-features-title">
+      <div class="pp-section-head" data-sc-in>
+        <h2 id="pp-features-title">Core features.</h2>
+        <p>Everything between the preacher's voice and the passage on the screen.</p>
+      </div>
+      <div class="pp-feature-grid" data-sc-in data-sc-stagger="45">
+          <article class="pp-feature">
+            <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M24 10a8 8 0 0 1 16 0v20a8 8 0 0 1-16 0z"/><path pathLength="1" d="M16 28a16 16 0 0 0 32 0"/><path pathLength="1" d="M32 44v12M24 56h16"/><path pathLength="1" d="M8 22v10M56 22v10"/></svg>
+            <div><h3>Live listening</h3><p>Microphone audio is captured, split on voice activity and transcribed locally, with the engine and model switchable from the console.</p></div>
+          </article>
+          <article class="pp-feature">
+            <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M20 10h-8v44h8"/><path pathLength="1" d="M44 10h8v44h-8"/><path pathLength="1" d="M22 26h20M22 34h14M22 42h18"/><path pathLength="1" d="M26 18h4"/></svg>
+            <div><h3>Reference detection</h3><p>A parser turns messy transcripts into references: misheard book names, spoken numbers, and partial references spread across utterances.</p></div>
+          </article>
+          <article class="pp-feature">
+            <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M32 16c-6-5-14-6-24-6v38c10 0 18 1 24 6 6-5 14-6 24-6V10c-10 0-18 1-24 6z"/><path pathLength="1" d="M32 16v38"/><path pathLength="1" d="M14 20h10M14 27h10M40 20h10M40 27h10"/></svg>
+            <div><h3>Offline scripture</h3><p>KJV, ASV and BSB are bundled in SQLite. NIV, AMP and MSG can be added through api.bible and are cached locally.</p></div>
+          </article>
+          <article class="pp-feature">
+            <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M6 10h52v34H6z"/><path pathLength="1" d="M26 44l-4 10h20l-4-10"/><path pathLength="1" d="M14 20h18M14 27h26M14 34h12"/></svg>
+            <div><h3>Operator console</h3><p>A React console to search, preview, confirm and queue passages before they go live.</p></div>
+          </article>
+          <article class="pp-feature">
+            <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle pathLength="1" cx="32" cy="26" r="4"/><path pathLength="1" d="M24 18a11 11 0 0 0 0 16M40 18a11 11 0 0 1 0 16"/><path pathLength="1" d="M17 11a21 21 0 0 0 0 30M47 11a21 21 0 0 1 0 30"/><path pathLength="1" d="M32 30l-8 26M32 30l8 26M27 46h10"/></svg>
+            <div><h3>Displays for projection and OBS</h3><p>Each configured display is a web page on the local network, styled per screen and updated instantly.</p></div>
+          </article>
+          <article class="pp-feature">
+            <svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M8 12h48v32H8z"/><path pathLength="1" d="M24 52h16M32 44v8"/><path pathLength="1" d="M44 20h6v6h-6z"/><path pathLength="1" d="M14 20h22M14 27h16"/></svg>
+            <div><h3>A desktop launcher</h3><p>An Avalonia launcher starts the server, lives in the tray, picks the microphone, and recovers the server if it stops.</p></div>
+          </article>
+      </div>
+    </section>
+
+    <section class="pp-arch sc-section" data-sc-act="flow" aria-labelledby="pp-arch-title">
+      <div class="pp-section-head" data-sc-in>
+        <div>
+          <p class="pp-eyebrow">Architecture</p>
+          <h2 id="pp-arch-title">One process, from microphone to screen.</h2>
+        </div>
+        <p class="arch-hint">Hover or tap a component to trace its connections.</p>
+      </div>
+      <div class="arch-diagram">
+        <svg class="arch-wires" aria-hidden="true"></svg>
+        <div class="arch-grid">
+          <article class="arch-node" data-node="launcher" tabindex="0" style="--c:1;--r:1;--mc:1;--mr:1">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M8 12h48v32H8z"/><path pathLength="1" d="M24 52h16M32 44v8"/><path pathLength="1" d="M44 20h6v6h-6z"/><path pathLength="1" d="M14 20h22M14 27h16"/></svg></span>
+            <h3>Desktop launcher</h3>
+            <p>Starts and supervises the server, tray, microphone picker</p>
+            <ul><li>Avalonia</li></ul>
+            <ol class="arch-links"><li><span aria-hidden="true">→</span> Web host · starts, restarts</li></ol>
+          </article>
+          <article class="arch-node" data-node="host" tabindex="0" style="--c:3;--r:1;--mc:1;--mr:2">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle pathLength="1" cx="32" cy="26" r="4"/><path pathLength="1" d="M24 18a11 11 0 0 0 0 16M40 18a11 11 0 0 1 0 16"/><path pathLength="1" d="M17 11a21 21 0 0 0 0 30M47 11a21 21 0 0 1 0 30"/><path pathLength="1" d="M32 30l-8 26M32 30l8 26M27 46h10"/></svg></span>
+            <h3>Web host</h3>
+            <p>Pipeline, minimal API and the event broadcaster</p>
+            <ul><li>ASP.NET Core</li><li>SSE</li></ul>
+            <ol class="arch-links"><li><span aria-hidden="true">→</span> Operator console · SSE + REST</li><li><span aria-hidden="true">→</span> Display pages · SSE /events</li></ol>
+          </article>
+          <article class="arch-node" data-node="console" tabindex="0" style="--c:4;--r:1;--mc:2;--mr:2">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M6 10h52v34H6z"/><path pathLength="1" d="M26 44l-4 10h20l-4-10"/><path pathLength="1" d="M14 20h18M14 27h26M14 34h12"/></svg></span>
+            <h3>Operator console</h3>
+            <p>Search, preview, confirm and queue passages</p>
+            <ul><li>React</li><li>Vite</li></ul>
+            <ol class="arch-links"></ol>
+          </article>
+          <article class="arch-node" data-node="audio" tabindex="0" style="--c:1;--r:2;--mc:1;--mr:3">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M24 10a8 8 0 0 1 16 0v20a8 8 0 0 1-16 0z"/><path pathLength="1" d="M16 28a16 16 0 0 0 32 0"/><path pathLength="1" d="M32 44v12M24 56h16"/><path pathLength="1" d="M8 22v10M56 22v10"/></svg></span>
+            <h3>Audio capture</h3>
+            <p>Microphone input cut into speech at pauses</p>
+            <ul><li>PortAudio</li><li>VAD</li></ul>
+            <ol class="arch-links"><li><span aria-hidden="true">→</span> Speech engine · speech chunks</li></ol>
+          </article>
+          <article class="arch-node" data-node="speech" tabindex="0" style="--c:2;--r:2;--mc:2;--mr:3">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M6 32h6M52 32h6"/><path pathLength="1" d="M16 26v12M22 18v28M28 12v40M34 20v24M40 14v36M46 24v16"/></svg></span>
+            <h3>Speech engine</h3>
+            <p>Local transcription, biased to scripture vocabulary</p>
+            <ul><li>Whisper.net</li><li>sherpa-onnx</li></ul>
+            <ol class="arch-links"><li><span aria-hidden="true">→</span> Reference parser · transcripts</li></ol>
+          </article>
+          <article class="arch-node" data-node="parser" tabindex="0" style="--c:3;--r:2;--mc:1;--mr:4">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M20 10h-8v44h8"/><path pathLength="1" d="M44 10h8v44h-8"/><path pathLength="1" d="M22 26h20M22 34h14M22 42h18"/><path pathLength="1" d="M26 18h4"/></svg></span>
+            <h3>Reference parser</h3>
+            <p>Finds references across utterances and scores confidence</p>
+            <ul><li>Core</li><li>No dependencies</li></ul>
+            <ol class="arch-links"><li><span aria-hidden="true">→</span> Scripture store · verse lookup</li><li><span aria-hidden="true">→</span> Web host · detected verses</li></ol>
+          </article>
+          <article class="arch-node" data-node="display" tabindex="0" style="--c:4;--r:2;--mc:2;--mr:4">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M6 10h52v34H6z"/><path pathLength="1" d="M26 44l-4 10h20l-4-10"/><path pathLength="1" d="M14 20h18M14 27h26M14 34h12"/></svg></span>
+            <h3>Display pages</h3>
+            <p>One styled page per projector or OBS output</p>
+            <ul><li>React</li></ul>
+            <ol class="arch-links"></ol>
+          </article>
+          <article class="arch-node" data-node="data" tabindex="0" style="--c:3;--r:3;--mc:1;--mr:6">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M32 16c-6-5-14-6-24-6v38c10 0 18 1 24 6 6-5 14-6 24-6V10c-10 0-18 1-24 6z"/><path pathLength="1" d="M32 16v38"/><path pathLength="1" d="M14 20h10M14 27h10M40 20h10M40 27h10"/></svg></span>
+            <h3>Scripture store</h3>
+            <p>Bundled KJV, ASV and BSB for offline use</p>
+            <ul><li>SQLite</li><li>Dapper</li></ul>
+            <ol class="arch-links"><li><span aria-hidden="true">→</span> api.bible · online translations</li></ol>
+          </article>
+          <article class="arch-node" data-node="online" tabindex="0" style="--c:4;--r:3;--mc:2;--mr:6">
+            <span class="arch-icon"><svg class="glyph" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M14 30a18 18 0 0 1 32-10"/><path pathLength="1" d="M46 10v10H36"/><path pathLength="1" d="M50 34a18 18 0 0 1-32 10"/><path pathLength="1" d="M18 54V44h10"/><path pathLength="1" d="M26 28h12v10H26z"/></svg></span>
+            <h3>api.bible</h3>
+            <p>Optional NIV, AMP and MSG, cached for 14 days</p>
+            <ul><li>HTTP</li><li>Local cache</li></ul>
+            <ol class="arch-links"></ol>
+          </article>
+        </div>
+      </div>
+      <details class="arch-connections">
+        <summary>All connections</summary>
+        <ol><li data-edge="0" data-from="launcher" data-to="host"><span>Desktop launcher</span> to <span>Web host</span>: starts, restarts</li><li data-edge="1" data-from="audio" data-to="speech"><span>Audio capture</span> to <span>Speech engine</span>: speech chunks</li><li data-edge="2" data-from="speech" data-to="parser"><span>Speech engine</span> to <span>Reference parser</span>: transcripts</li><li data-edge="3" data-from="parser" data-to="data"><span>Reference parser</span> to <span>Scripture store</span>: verse lookup</li><li data-edge="4" data-from="data" data-to="online"><span>Scripture store</span> to <span>api.bible</span>: online translations</li><li data-edge="5" data-from="parser" data-to="host"><span>Reference parser</span> to <span>Web host</span>: detected verses</li><li data-edge="6" data-from="host" data-to="console"><span>Web host</span> to <span>Operator console</span>: SSE + REST</li><li data-edge="7" data-from="host" data-to="display"><span>Web host</span> to <span>Display pages</span>: SSE /events</li></ol>
+      </details>
+    </section>
+
+    <section class="pp-innov sc-section" data-sc-act="flow" aria-labelledby="pp-innov-title">
+      <div class="pp-section-head" data-sc-in>
+        <h2 id="pp-innov-title">Innovation highlights.</h2>
+      </div>
+      <div class="pp-innov-list" data-sc-in data-sc-stagger="70">
+        <article class="pp-innovation">
+          <div class="pp-innovation-art"><svg class="glyph glyph-xl" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M32 8l24 12-24 12L8 20z"/><path pathLength="1" d="M8 32l24 12 24-12"/><path pathLength="1" d="M8 44l24 12 24-12"/></svg></div>
+          <p class="pp-innovation-label">Innovation one</p>
+          <h3>Context that bridges the pauses</h3>
+          <p>Sticky book and chapter context survives a window of utterances, so a reference split by filler still resolves. An explicit cue can resume the last passage long after.</p>
+        </article>
+        <article class="pp-innovation">
+          <div class="pp-innovation-art"><svg class="glyph glyph-xl" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M32 6l20 7v16c0 13-8 23-20 29C20 52 12 42 12 29V13z"/><path pathLength="1" d="M32 11l15 5v13c0 10-6 18-15 23-9-5-15-13-15-23V16z"/><path pathLength="1" d="M23 31l6 6 13-14"/></svg></div>
+          <p class="pp-innovation-label">Innovation two</p>
+          <h3>Confidence before the screen</h3>
+          <p>Every heuristic match carries a confidence score for a confirm gate, because on a live display a false positive costs more than a miss.</p>
+        </article>
+        <article class="pp-innovation">
+          <div class="pp-innovation-art"><svg class="glyph glyph-xl" viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path pathLength="1" d="M6 32h6M52 32h6"/><path pathLength="1" d="M16 26v12M22 18v28M28 12v40M34 20v24M40 14v36M46 24v16"/></svg></div>
+          <p class="pp-innovation-label">Innovation three</p>
+          <h3>Recognition biased to scripture</h3>
+          <p>Whisper is primed with a vocabulary built from the parser's own book catalogue, so book names and numbers survive transcription.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="pp-stack sc-section" data-sc-act="flow" aria-labelledby="pp-stack-title">
+      <div class="pp-stack-head" data-sc-in>
+        <p class="pp-eyebrow">Technology stack</p>
+        <h2 id="pp-stack-title">What it is built with.</h2>
+      </div>
+      <div class="pp-stack-grid" data-sc-in data-sc-stagger="60">
+        <div class="pp-stack-group">
+          <h3>Host</h3>
+          <ul><li>.NET 10</li><li>ASP.NET Core Minimal API</li><li>Server-Sent Events</li></ul>
+        </div>
+        <div class="pp-stack-group">
+          <h3>Speech and audio</h3>
+          <ul><li>Whisper.net</li><li>sherpa-onnx</li><li>PortAudio</li></ul>
+        </div>
+        <div class="pp-stack-group">
+          <h3>Data</h3>
+          <ul><li>SQLite</li><li>Dapper</li><li>api.bible</li></ul>
+        </div>
+        <div class="pp-stack-group">
+          <h3>Interface</h3>
+          <ul><li>React</li><li>Vite</li><li>Avalonia</li></ul>
+        </div>
+        <div class="pp-stack-group">
+          <h3>Quality</h3>
+          <ul><li>xUnit</li><li>Golden-audio tests</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-close" data-sc-act="flow" aria-labelledby="pp-close-title">
+      <p class="pp-eyebrow">Next project</p>
+      <a class="pp-next" href="employed.html">
+        <span class="pp-next-cat">AI-assisted workflow · Web</span>
+        <span id="pp-close-title" class="pp-next-name" data-vt="pt-employed">employed</span>
+        <span class="pp-next-arrow" aria-hidden="true">→</span>
+      </a>
+      <div class="pp-close-foot">
+        <a href="../index.html#project-lumos" data-back>All selected systems</a>
+        <a class="pp-close-mail" href="mailto:skingmensah@gmail.com?subject=Enquiry%20about%20LumosCast" data-sc-magnet="0.25" data-sc-rise="0">Talk about LumosCast <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+  <script src="../scrollcraft.js"></script>
+  <script src="project.js"></script>
+</body>
+</html>
