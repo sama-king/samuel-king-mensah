@@ -1,0 +1,12 @@
+# Only the static site is deployed.
+lab/
+scripts/
+scrollcraft/
+site/
+assets/source/
+node_modules/
+*.md
+*.txt
+!assets/fonts/LICENSE.txt
+samuel-king-mensah-portfolio.zip
+package-manifest.json

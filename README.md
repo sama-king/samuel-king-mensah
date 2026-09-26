@@ -2,7 +2,7 @@
 
 Run `npm run dev`, then open http://127.0.0.1:4500.
 
-Static HTML, CSS and JavaScript, with no build step or production dependencies. Deploy the contents of `site/` or the portfolio ZIP to a static host. `server.mjs` is only the local preview server.
+Static HTML, CSS and JavaScript, with no build step or production dependencies. Deploy the contents of `site/` or the portfolio ZIP to a static host. `scripts/serve.mjs` is only the local preview server; Vercel serves the repo root as static files (`vercel.json`, `.vercelignore`).
 
 - `index.html`: semantic page content, all five project articles, language/framework proficiency, career and contact information.
 - `styles.css`: supplied identity, responsive art direction, gallery and proficiency styling.
