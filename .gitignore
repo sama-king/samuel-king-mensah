@@ -23,3 +23,5 @@ lab/**/*.jpeg
 lab/**/*.webp
 lab/**/*.log
 lab/**/*.json
+.vercel
+.env*
