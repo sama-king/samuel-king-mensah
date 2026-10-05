@@ -87,7 +87,7 @@ function page(key) {
   <span data-sc-progress></span>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="pp-bar">
-    <a class="pp-back" href="../index.html#project-${key}" data-back><span aria-hidden="true">←</span> Selected systems</a>
+    <a class="pp-back" href="../index.html#project-${key}" data-back><span aria-hidden="true">←</span> Featured projects</a>
     <a class="pp-mark" href="../index.html" aria-label="Samuel King-Mensah, home"><img src="../assets/skm-logo.png" alt="" width="200" height="50"></a>
     <a class="pp-contact" href="${mail(p.name)}">Get in touch <span aria-hidden="true">↗</span></a>
   </header>
@@ -158,7 +158,7 @@ function page(key) {
         <span class="pp-next-arrow" aria-hidden="true">→</span>
       </a>
       <div class="pp-close-foot">
-        <a href="../index.html#project-${key}" data-back>All selected systems</a>
+        <a href="../index.html#project-${key}" data-back>All featured projects</a>
         <a class="pp-close-mail" href="${mail(p.name)}" data-sc-magnet="0.25" data-sc-rise="0">Talk about ${esc(plainName)} <span aria-hidden="true">↗</span></a>
       </div>
     </section>
