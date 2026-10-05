@@ -30,7 +30,6 @@ function page(key) {
   const i = order.indexOf(key);
   const next = projects[order[(i + 1) % order.length]];
   const nextKey = order[(i + 1) % order.length];
-  const c = p.palette;
   const plainName = p.name.replace(/&amp;/g, '&');
 
   const a = arch[key];
@@ -75,11 +74,10 @@ function page(key) {
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>${plainName} · Samuel King-Mensah</title>
   <meta name="description" content="${esc(p.lede)}">
-  <meta name="theme-color" content="${c.canvas}">
+  <meta name="theme-color" content="#eef1f5">
   <link rel="icon" href="../assets/favicon.png">
   <link rel="stylesheet" href="../scrollcraft.css">
   <link rel="stylesheet" href="project.css">
-  <style>:root{--sc-canvas:${c.canvas};--sc-surface:${c.surface};--sc-ink:${c.ink};--sc-ink-soft:${c.soft};--sc-accent:${c.accent};--sc-accent-ink:${c.canvas};--pp-deep:${c.deep};--pp-line:${c.line};--pp-alt:${c.alt || c.accent}}</style>
   <script>document.documentElement.classList.add('js')</script>
   <noscript><style>[data-sc-in],[data-sc-stagger]>*,[data-sc-cue]{opacity:1!important;transform:none!important}</style></noscript>
 </head>

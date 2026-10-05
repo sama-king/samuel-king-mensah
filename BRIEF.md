@@ -137,3 +137,9 @@ User direction, verbatim:
 - Architecture is a component map (`lab/projects-arch.mjs`): 7 to 10 components on a 4-column grid, each showing what it handles and its technology. Components are always visible. Scrolling through the section draws the labelled connections one by one; once complete, a pulse runs along each. Hovering, tapping or focusing a component highlights its connections. On phones the wires give way to a list of each component's outgoing connections inside its card.
 - Home gallery: no longer a 5.4-viewport pinned section. It is one screen tall and scrolls sideways natively (trackpad swipe, touch swipe, shift+wheel, mouse drag, arrows and jump links). Vertical scrolling passes over it. Touch uses CSS snap; mouse and trackpad settle to the next project in the direction of the gesture, because mandatory CSS snap swallowed small trackpad gestures. The home page is about 5.2 viewports, down from about 9.6.
 - Opening a project records it in the home URL (`#project-<key>`), so Back returns to the same project even when the page is reloaded rather than restored.
+
+## Revision 5: one palette (2026-10-05)
+
+> change the the themes of the project detail pages to match the main site instead of the custom themes.
+
+Per-project palettes were removed. Project pages now use the home page tokens (canvas #eef1f5, ink #10223d, soft #536077, accent #075cce) with the home page's section grounds: #f8f9fb for features and stack, the gallery navy (#0b192d, accent #94bdff) for the architecture map, #e8edf4 for innovation, and the contact blue (#dfe9f7) for the close. Lowest text contrast 5.18:1.

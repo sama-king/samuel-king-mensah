@@ -1,5 +1,4 @@
 // Project page content. Every claim here is grounded in the project's own repository in ~/dev.
-// `mood` is art direction only and never rendered.
 // No em dashes in visible copy (Scroll Craft rule). No invented figures.
 
 export const order = ['security', 'rabah', 'lumos', 'employed', 'frontdesk'];
@@ -13,8 +12,6 @@ export const projects = {
     headline: ['The right person.', 'The right access.'],
     lede: 'A mobile-first identification and access-management system, built for staff and event operations at Loveworld headquarters.',
     facts: [['Role', 'Full-stack architecture and build'], ['Platform', 'Android app with a PHP API'], ['In use', 'Loveworld headquarters, Lagos']],
-    palette: { canvas: '#0e0c09', deep: '#090806', surface: '#1a1610', ink: '#f4eddf', soft: '#a99e88', accent: '#d8ab52', line: '#3a3226' },
-    mood: 'Night watch at the gate: warm gold on near black.',
     featuresIntro: 'Everything a checkpoint needs, from the pass in a visitor\'s hand to the record an administrator reviews.',
     features: [
       ['scan', 'Scan and decide', 'Guards scan a QR pass and receive an allowed or denied result with the reason: wrong event, missing permission, or an expired pass.'],
@@ -46,8 +43,6 @@ export const projects = {
     headline: ['From stock intake', 'to a settled order.'],
     lede: 'An operations application for a frozen meats and fish business, connecting inventory, orders, payments, reporting, and AI-assisted ordering across WhatsApp, Instagram and the website.',
     facts: [['Role', 'Architecture and full build'], ['Platform', 'Next.js web app on Firebase'], ['Public site', '<a href="https://www.rabahfoods.com/" target="_blank" rel="noopener noreferrer">rabahfoods.com ↗</a>']],
-    palette: { canvas: '#f5e7d3', deep: '#efdcc2', surface: '#fbf3e8', ink: '#4a2c24', soft: '#7d5c50', accent: '#d96c1f', line: '#dcc3a6', alt: '#3dbcc9' },
-    mood: 'The brand itself: warm cream, cocoa and burnt orange, with a cold aqua for the freezer.',
     featuresIntro: 'One application for the whole business, from the freezer to the settled balance.',
     features: [
       ['box', 'Stock intake by batch', 'Every box or lot is received as a batch with its cost, and each intake records how the invoice was paid across cash, mobile money and bank.'],
@@ -78,8 +73,6 @@ export const projects = {
     headline: ['Spoken references.', 'Ready for the screen.'],
     lede: 'A presentation system that listens to a live sermon, detects spoken Bible references, retrieves the passage from a local database, and puts it on the projector or OBS.',
     facts: [['Role', 'Architecture and full build'], ['Platform', 'macOS, Windows and Linux'], ['Network', 'Runs with no internet']],
-    palette: { canvas: '#0b0d1f', deep: '#070817', surface: '#151939', ink: '#eef0ff', soft: '#9ea4cf', accent: '#f3b95f', line: '#2b3160', alt: '#adc6ff' },
-    mood: 'A dark auditorium and a single warm light on the screen.',
     featuresIntro: 'Everything between the preacher\'s voice and the passage on the screen.',
     features: [
       ['mic', 'Live listening', 'Microphone audio is captured, split on voice activity and transcribed locally, with the engine and model switchable from the console.'],
@@ -111,8 +104,6 @@ export const projects = {
     headline: ['Find the fit.', 'Keep the evidence.'],
     lede: 'A local workspace that finds remote roles a person could plausibly win, explains how to approach each one, and tracks what they did about it.',
     facts: [['Role', 'Design and full build'], ['Platform', 'Local Python web app'], ['Data', 'Stays on your machine']],
-    palette: { canvas: '#eef0e6', deep: '#e3e7d6', surface: '#f8f9f2', ink: '#1b2a1f', soft: '#56645a', accent: '#3f7d3a', line: '#cdd4bf', alt: '#b8d272' },
-    mood: 'A well-kept notebook: paper, ink green and a highlighter.',
     featuresIntro: 'From thousands of postings to the few worth a serious application.',
     features: [
       ['magnify', 'Two lanes of discovery', 'Seven public aggregators, plus an 884-company registry resolved into company job boards and your own watchlist.'],
@@ -144,8 +135,6 @@ export const projects = {
     headline: ['A clearer welcome.', 'A connected workplace.'],
     lede: 'A cross-platform workplace access application that connects visitors, appointments, staff and access records across administrator, security and employee roles.',
     facts: [['Role', 'Architecture and mobile build'], ['Platform', 'Android and iOS, one codebase'], ['UI', 'Compose Multiplatform']],
-    palette: { canvas: '#07130f', deep: '#040c09', surface: '#0f211a', ink: '#e9f3ee', soft: '#93aca1', accent: '#4cc58a', line: '#1f3a2f' },
-    mood: 'A quiet reception at night: deep green glass and a clear signal light.',
     featuresIntro: 'Every part of a visit, from the invitation to the door.',
     features: [
       ['users', 'Visitors and check-in', 'Register visitors, check them in and out, and keep their details and history in one place.'],
